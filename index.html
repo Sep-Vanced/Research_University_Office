@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Unversity Office</title>
+
+    <!-- External Styles & Scripts -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="javascript/main.js"></script>
+
+    <!-- Script for chart (need online)-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- link for icons - font awsome (need online)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- link for icons - Iconscout (need online)-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('img/1bg.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-y: auto;
+    }
+</style>
+<body>
+
+  <div class="header head">
+    <div class="logo-title">
+        <img src="img/prmsu_logo.png" class="logo">
+        <h1>P R M S U</h1>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html" style="background-color: lightgray;">Home</a>
+        <a href="completed.html">Completed</a>
+        <a href="published.html">Published</a>
+        <a href="utilized.html">Utilized</a>
+    </div>
+    <button class="fa-solid fa-power-off" onclick="openLoginPopup()"></button>
+  </div>
+  <!-- Login Popup 
+  <div class="popup-container" id="loginPopup">
+      <div class="popup">
+          <span class="close-btn" onclick="closeLoginPopup()">&times;</span>
+          <h2>Welcome! Log in as</h2>
+          <form action="login.php" method="POST" id="login-form">
+              <input type="text" name="username" placeholder="Username" required><br>
+              <input type="password" name="password" placeholder="Password" required><br>
+              <button type="submit-1" class="btn-1" >Login</button>
+              <p>Don't have an account yet?</p>
+              <button type="button-s" class="btn-2" onclick="openRegisterPopup()">Sign up</button>
+              
+          </form>
+      </div>
+  </div>
+
+   Registration Popup 
+  <div class="popup-container" id="registerPopup">
+      <div class="popup">
+          <span class="close-btn" onclick="closeRegisterPopup()">&times;</span>
+          <h2>Register an Account</h2>
+          <form id="register-form" method="POST" action="register_process.php">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="middle_name" placeholder="Middle Name (optional)">
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="text" name="suffix" placeholder="Suffix (optional)">
+            <input type="text" name="contact" placeholder="Contact Number" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <select name="role" required>
+        <option value="">Select Role</option>
+        <option value="User1">User1</option>
+        <option value="User2">User2</option>
+        <option value="Administrator">Administrator</option>
+    </select>
+    <button type="submit-r" class="btn-3">Register</button>
+</form>
+      </div>
+  </div> -->
+
+<div class="first-container">
+    <div class="item item-1">
+        <div class="ruo">
+            <p>
+                Research University Office
+            </p>
+        </div>
+    </div>
+        <div class="item item-2">
+            <div class="image-wrapper">
+        <div class="container-wrap"></div>
+            <div class="container-per">
+                <div class="slider">
+                    <div class="slide-track">
+                        <div class="slide">
+                            <img src="img/pic1.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic2.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic3.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic4.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic5.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic6.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic7.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic8.jpg">
+                        </div>
+                        <!-- COPY THE SAME IMAGE FOR SLIDES -->
+                        <div class="slide">
+                            <img src="img/pic1.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic2.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic3.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic4.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic5.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic6.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic7.jpg">
+                        </div>
+                        <div class="slide">
+                            <img src="img/pic8.jpg">
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--------- SECOND - GRAPH CONTAINER ------------>
+
+<div class="second-container">
+
+    <div class="itemm item-3">
+        <div class="ruo-2">
+            <p>
+                Uploaded Research Statistics
+            </p>
+        </div>
+    </div>
+
+    <div class="itemm item-4">
+        <canvas id="researchChart" width="600" height="503"></canvas>
+        <script>
+            const ctx = document.getElementById('researchChart').getContext('2d');
+            const researchChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Completed', 'Published', 'Utilized'],
+                    datasets: [{
+                        label: 'Uploaded Researches',
+                        data: [
+                            <?php echo $completedCount; ?>,
+                            <?php echo $publishedCount; ?>,
+                            <?php echo $utilizedCount; ?>
+                        ],
+                        backgroundColor: [
+                            'rgba(0, 123, 255, 0.8)',   // Blue
+                            'rgba(220, 53, 69, 0.8)',   // Red
+                            'rgba(40, 167, 69, 0.8)'    // Green
+                        ],
+                        borderColor: [
+                            'rgba(0, 123, 255, 1)',
+                            'rgba(220, 53, 69, 1)',
+                            'rgba(40, 167, 69, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            precision: 0,
+                            ticks: {
+                                color: 'black',   // Y-axis font color
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'black',   // X-axis font color
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'black',  // Legend font color
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+</script>
+
+
+    </div>
+
+    <div class="itemm item-5">
+        <div class="summary-container">
+          <h2>Research Upload Summary</h2>
+          
+          <div class="summary-card blue">
+            <span class="labeel">Completed</span>
+            <span class="value">7</span>
+          </div>
+
+          <div class="summary-card red">
+            <span class="labeel">Published</span>
+            <span class="value">5</span>
+          </div>
+
+          <div class="summary-card green">
+            <span class="labeel">Utilized</span>
+            <span class="value">25</span>
+          </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--------- THIRD - CONTAINER ------------>
+
+<div class="third-container">
+
+    <div class="itemmm item-6">
+
+    </div>
+
+    <div class="itemmm item-7">
+        <div class="ruo-3">
+            <p>
+                Research University Office
+            </p>
+        </div>
+    </div>
+
+    <div class="itemmm item-8">
+        <div class="research_heads">
+            <p>SATELLITE CAMPUSES</p>
+            <div class="campus">
+                <h4>Prmsu Sta. Cruz Campus</h4>
+            </div>
+
+            <div class="campus">
+                <h4>Prmsu Candelaria Campus</h4>
+            </div>
+
+            <div class="campus">
+                <h4>Prmsu Masinloc Campus</h4>
+            </div>
+
+            <div class="campus">
+                <h4>Prmsu Iba Campus - EIIT</h4>
+            </div>
+
+            <div class="campus">
+                <h4>Prmsu Iba Campus - EHHSS</h4>
+            </div>
+
+            <div class="campus">
+                <h4>Prmsu Iba Campus - AFFARFE</h4>
+            </div>
+
+            <div class="campus">
+                <h4>Prmsu Botolan Campus</h4>
+            </div>
+
+            <div class="campus">
+                <h4>Prmsu San Marcelino Campus</h4>
+            </div>
+
+            <div class="campus">
+                <h4>Prmsu Castillejos Campus</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="itemmm item-9">
+        
+    </div>
+
+    <div class="itemmm item-10">
+        <div class="research_heads">
+            <p>HEAD OF RESEARCH OFFICES</p>
+            <div class="names">
+                <h4>Mr. Sanny Boy M. Mistica</h4>
+            </div>
+
+            <div class="names">
+                <h4>Mrs. Kris A. Eben</h4>
+            </div>
+
+            <div class="names">
+                <h4>Mrs. Nerissa A. Javier</h4>
+            </div>
+
+            <div class="names">
+                <h4>Mr. Daryl John C. Ragadio</h4>
+            </div>
+
+            <div class="names">
+                <h4>Mrs. Edna M. Padre</h4>
+            </div>
+
+            <div class="names">
+                <h4>Mr. Dann Mark Dela Cruz</h4>
+            </div>
+
+            <div class="names">
+                <h4>Ms. Princess Jenele V. Mallari</h4>
+            </div>
+
+            <div class="names">
+                <h4>Mr. Sanny Babera</h4>
+            </div>
+
+            <div class="names">
+                <h4>Mrs. Garaldine A. Pagunsan</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="itemmm item-11">
+        <div class="myprmsu">
+            <div class="getin">
+                <p>Get in touch</p>
+                <div class="info">
+                <i class="uil uil-envelope"></i>
+                    Send us E-mail.
+                    <p>researchinnovation@prmsu.edu.ph</p>
+            <br>
+                <i class="uil uil-envelope"></i>
+                    Message us via the PRMSU assist hub.
+                    <p>(047)602-6120-24</p>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="itemmm item-12">
+        <div class="footer" style="transform: translate(0, 10%);">
+            <div class="allrights">
+                <img src="img/prmsu_logo.png">
+                <h2> ©2025 President Ramon Magsaysay State University.</h2>
+                <h2> All Rights Reserved.</h2>
+            </div>
+
+            <div class="social-links">
+
+                <a href="https://prmsu.edu.ph/">
+                    <i class="uil uil-browser"></i></a>
+
+                <a href="https://www.facebook.com/PRMSUPh">
+                    <i class="uil uil-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="itemmm item-13">
+        <div class="dev">
+            <p>Developers</p>
+            <div class="developers">
+                <h3>Bachelor of Science in Information Technology</h3>
+                <h3>Batch 2025</h3>
+            <br>
+                <a href="https://www.facebook.com/joseph.menor.mangubat.2025">
+                    <i class="uil uil-facebook"></i>
+                </a>
+                    Mr. Joseph M. Mangubat
+            <br>
+                    <i class="uil uil-envelope"></i>
+                    josephmangubat87@gmail.com
+                    
+            <br>
+            <br>
+                <a href="https://www.facebook.com/herbert.catro">
+                    <i class="uil uil-facebook"></i>
+                </a>
+                    Mr. Herbert M. Castro
+            <br>
+                    <i class="uil uil-envelope"></i>
+                    castroherbert414@gmail.com
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

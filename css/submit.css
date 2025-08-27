@@ -1,0 +1,17 @@
+button[type="submit"] {
+    width: 60%;
+    padding: 10px;
+    color: black;
+    background-color: #d9d9d9; /*medyo white*/
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: Trebuchet MS;
+    font-size: 18px;
+    margin-top: 10px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+button[type="submit"]:hover {
+    background-color: green;
+}
